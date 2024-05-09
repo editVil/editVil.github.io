@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+    <!-- Import tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+
+    <!-- Import opencv -->
+    <script src="https://docs.opencv.org/3.4.1/opencv.js"></script>
+
+    <title>MNIST</title>
+</head>
+<body>
+    <h1>MNIST</h1>
+
+    <div class="btns">
+        <button id="btnReset">Reset</button>
+        <button id="btnSave">Save</button>
+    </div>
+
+    <div class="contents">
+        <canvas id="MNIST" class="canvas" width="300px" height="300px"></canvas>
+        <canvas id="input" class="canvas" width="300px" height="300px"></canvas>
+    </div>
+
+    <div id="result" class="result">예측값 : </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

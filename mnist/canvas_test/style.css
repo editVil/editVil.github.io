@@ -1,0 +1,65 @@
+@import "reset.css";
+body {
+    background-color : #eeeeee;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+
+    .contents{
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+    }
+    .contents .canvas{
+        width: 300px;
+        height: 300px;
+        margin: 0px 5px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+    }
+    .contents .input{
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+    }
+    .canvas .image{
+        width: 300px;
+        height: 300px;
+    }
+
+    .btns{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        vertical-align: middle;
+    }
+    .btns button{
+        all: unset;
+        cursor: pointer;
+        background-color: white;
+        padding: 5px 0px;
+        margin: 5px 10px;
+        width: 80px;
+        height: 20px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0, 1px 3px rgba(0, 0, 0, 0.068);
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .btns button:active{
+        transform: scale(0.98)
+    }
+
+    .result {
+        margin: 5px 10px;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+}
