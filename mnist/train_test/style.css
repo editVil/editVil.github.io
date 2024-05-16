@@ -1,0 +1,85 @@
+@import "reset.css";
+body{
+    background-color : #eeeeee;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+
+    button{
+        height: 20;
+        margin: 10px;
+        font-size: 12pt;
+    }
+    textarea{
+        margin: 10px;
+        resize: none;
+    }
+    canvas{
+        border: 0.1rem solid black;
+    }
+    hr{
+        margin: 10px;
+    }
+    input{
+        margin-left: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .title{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .box{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 0.2rem solid white;
+    }
+
+    .box .subtitle{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .box .subtitle h3{
+        margin-left: 10px;
+    }
+
+    .box .subcontent{
+        display: flex;
+        flex-direction: row;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .box .subcontent textarea{
+        height: 15px;
+        width: 100px;
+        margin-right: 50px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .graph{
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 10px;
+    }
+
+    .data{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .data img{
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }
+}

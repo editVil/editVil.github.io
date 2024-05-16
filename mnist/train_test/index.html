@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script> 
+
+    <!-- Import tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis/dist/tfjs-vis.umd.min.js"></script>
+
+    <!-- Adds the WASM backend to the global backend registry -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
+
+    <!-- Import opencv -->  
+    <script src="https://docs.opencv.org/3.4.1/opencv.js"></script>
+
+    <script src="./mnist_utils.js"></script>
+    <script src="./mnist_data.js"></script>
+
+    <title>MNIST</title>
+</head>
+<body>
+
+    <div class="title">
+        <h1>MNIST Classifier using TensorFlow.js</h1>
+        <img src="./tensorflow.png" width="80" height="80">
+
+        <p id="datetime"></p>
+        <script>
+            // Get current date and time
+            var now = new Date();
+            var datetime = now.toLocaleString();
+
+            // Insert date and time into HTML
+            const time = document.getElementById("datetime");
+            time.innerHTML = "<" + datetime + ">";
+            time.style.marginTop = "auto";
+            time.style.marginBottom = "10px";
+        </script>
+    </div>
+    
+    <div class="box">
+        <div class="subtitle">
+            <h3>MNIST Dataset</h3>
+            <button id="btnLoadData">loadData</button>
+        </div>
+        <div class="data">
+            <img id="imgTest0" width="100" height="100">
+            <img id="imgTest1" width="100" height="100">
+            <img id="imgTest2" width="100" height="100">
+            <img id="imgTest3" width="100" height="100">
+            <img id="imgTest4" width="100" height="100">
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="subtitle">
+            <h3>Model Summary</h3>
+            <button id="btnGoogleModel">Google Model</button>
+            <button id="btnCNNModel">CNN Model</button>
+            <button id="btnLoadModel">Load Model</button>
+        </div>
+        <div class="subcontent">
+            <h5>Json</h5>
+            <input type="file" id="inputJson" accept=".json" onchange="onChangeInput()"/>
+            <h5>Weight</h5>
+            <input type="file" id="inputWeight" accept=".bin" onchange="onChangeInput()"/>
+        </div>
+        
+        <textarea id="txtSummary"></textarea>
+    </div>
+
+    <div class="box">
+        <div class="subtitle">
+            <h3>Train Model</h3>
+            <button id="btnTrainModel">Train Model</button>
+            <button id="btnSaveModel">Save Model</button>
+        </div>
+        <div class="subcontent">
+            <h5>Epoch : </h5>
+            <textarea id="txtEpoch">1</textarea>
+            <h5>Batch Size : </h5>
+            <textarea id="txtBatchSize">100</textarea>
+        </div>
+
+        <div class="subtitle">
+            <h3>Train Progress</h3>
+        </div>
+        <div class="graph">
+            <div id="loss-graph"></div><hr>
+            <div id="acc-graph"></div>
+            <!-- <div class="caption">Accuracy</div><hr> -->
+        </div>
+        <div class="subcontent">
+            <h5 id="strNumIteration"></h5>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="subtitle">
+            <h3>Model Evaluate</h3>
+            <button id="btnEvalModel">Eval Model</button>
+        </div>
+        <div class="subcontent">
+            <div id="class-accuracy"></div><hr>
+            <div id="confusion-matrix"></div>
+        </div>
+        <div class="subcontent">
+            <h5 id="test-acc"></h5>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="subtitle">
+            <h3>Model Prediction</h3>
+            <button id="btnReset">Reset</button>
+            <button id="btnPrediction">Prediction</button>
+        </div>
+        <div class="subcontent">
+            <canvas id="handWrite" class="canvas" width="300px" height="300px"></canvas>
+            <hr>
+            <div id="predict-graph"></div>
+        </div>
+        <div class="subcontent">
+            <h5 id="prediction"></h5>
+        </div>
+    </div>
+    
+    <script src="./app.js"></script>
+
+</body>
+</html>
